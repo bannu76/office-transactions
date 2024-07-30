@@ -33,14 +33,17 @@ const addtransaction = async (req, res, next) => {
     );
 
     if (preQueryRes.length === 0 && reqData.amountType === "credit") {
+      //console.log("one");
       const query = `insert into offtransaction(type,amount,description,exe_date,balance) 
       values("${reqData.amountType}", ${reqData.amount},"${reqData.desc}","${reqData.currDate}",${reqData.amount})`;
       await db.run(query);
     } else if (reqData.amountType === "credit") {
+      //console.log("two");
       const query = `insert into offtransaction(type,amount,description,exe_date,balance) 
       values("${reqData.amountType}", ${reqData.amount},"${reqData.desc}","${reqData.currDate}",${reqData.amount} + ${preQueryTwo[0].balance})`;
       await db.run(query);
-    } else if (!(preQueryTwo[0].balance - reqData.amount) >= 1) {
+    } else if (preQueryTwo[0].balance - reqData.amount >= 1) {
+      //console.log("three");
       const query = `insert into offtransaction(type,amount,description,exe_date,balance) 
       values("${reqData.amountType}", ${reqData.amount},"${reqData.desc}","${reqData.currDate}",${preQueryTwo[0].balance}-${reqData.amount})`;
       await db.run(query);

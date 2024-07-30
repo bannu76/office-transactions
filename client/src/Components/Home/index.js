@@ -6,11 +6,10 @@ import "./index.css";
 const Home = () => {
   const [transactionList, setTransactionList] = useState([]);
 
+  //const apiUrl="https://selfless-wholeness-production.up.railway.app/"
   const getdata = async () => {
     try {
-      const dataList = await axios.get(
-        "https://selfless-wholeness-production.up.railway.app/"
-      );
+      const dataList = await axios.get("http://localhost:5000");
       setTransactionList(dataList.data);
     } catch (error) {
       console.log(error);
