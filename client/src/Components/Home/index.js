@@ -8,7 +8,9 @@ const Home = () => {
 
   const getdata = async () => {
     try {
-      const dataList = await axios.get("http://localhost:5000/");
+      const dataList = await axios.get(
+        "https://office-transactions-production.up.railway.app/"
+      );
       setTransactionList(dataList.data);
     } catch (error) {
       console.log(error);

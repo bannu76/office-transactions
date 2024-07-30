@@ -1,4 +1,3 @@
-const { query } = require("express");
 const path = require("path");
 const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
