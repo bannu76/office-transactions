@@ -39,7 +39,7 @@ const Transactions = (props) => {
     setAmountType(amountType);
     setAmountValue("");
     setDesc("");
-    //navigate("/", { replace: true });
+    navigate("/", { replace: true });
   };
 
   const save = (event) => {
