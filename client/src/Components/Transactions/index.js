@@ -27,7 +27,10 @@ const Transactions = (props) => {
 
     console.log(data);
     try {
-      const response = await axios.post("http://localhost:5000/add", data);
+      const response = await axios.post(
+        "https://selfless-wholeness-production.up.railway.app/add",
+        data
+      );
       console.log(response);
     } catch (error) {
       console.log(error);

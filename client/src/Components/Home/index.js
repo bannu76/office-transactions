@@ -9,7 +9,7 @@ const Home = () => {
   const getdata = async () => {
     try {
       const dataList = await axios.get(
-        "https://office-transactions-production.up.railway.app/"
+        "https://selfless-wholeness-production.up.railway.app/"
       );
       setTransactionList(dataList.data);
     } catch (error) {
