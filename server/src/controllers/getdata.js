@@ -15,6 +15,7 @@ const getdata = async (req, res, next) => {
     res.send(queryResult);
   } catch (error) {
     res.send(error);
+    res.send("hi");
   }
 };
 const addtransaction = async (req, res, next) => {

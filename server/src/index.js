@@ -17,7 +17,9 @@ const initializeDBAndServer = () => {
     app.listen(process.env.PORT || 4000, () => {
       console.log("server is running");
     });
-  } catch (e) {}
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 app.use("/", getTransactionData);
