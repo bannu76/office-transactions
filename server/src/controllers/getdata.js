@@ -13,9 +13,9 @@ const getdata = async (req, res, next) => {
       `select * from offtransaction order by id desc `
     );
     res.send(queryResult);
+    console.log("get requeisted");
   } catch (error) {
     res.send(error);
-    res.send("hi");
   }
 };
 const addtransaction = async (req, res, next) => {

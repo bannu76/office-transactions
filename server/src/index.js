@@ -14,7 +14,7 @@ app.use(cors({ origin: true }));
 const initializeDBAndServer = () => {
   try {
     db();
-    app.listen(process.env.PORT || 4000, () => {
+    app.listen(process.env.PORT || 4000, "", () => {
       console.log("server is running");
     });
   } catch (e) {
