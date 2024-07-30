@@ -1,4 +1,3 @@
-const { Db } = require("mongodb");
 const path = require("path");
 
 const { open } = require("sqlite");
